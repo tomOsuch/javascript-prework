@@ -15,7 +15,7 @@ let playerImput = prompt('Wybierz swój ruch! 1: kamień, 2: papier lub 3: noży
 
 console.log('Gracz wybrał: ' + playerImput);
 
-let playerMove = getMoveName(playerImput);
+let playerMove = getMoveName(Number(playerImput));
 console.log('Ruch gracza po getMoveName:', playerMove);
 
 printMessage('Twój ruch to: ' + playerMove);
