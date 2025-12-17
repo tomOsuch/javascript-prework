@@ -1,25 +1,26 @@
-// Generowanie ruchu komputera
+let rockButton = document.getElementById("play-rock");
+let paperButton = document.getElementById("play-paper");
+let scissorsButton = document.getElementById("play-scissors");
 
-let randomNumber = Math.floor(Math.random() * 3) + 1;
+function buttonClicked(playerImput) {
+    if (playerImput === 1) {
+        console.log("Kliknięto przycisk: Kamień");
+    } else if (playerImput === 2) {
+        console.log("Kliknięto przycisk: Papier");
+    } else if (playerImput === 3) {
+        console.log("Kliknięto przycisk: Nożyce");
+    }
+    playGame(playerImput);
+}
 
-console.log('Wylosowana liczba całkowita z zakresu 1-3 to: ' + randomNumber);
+rockButton.addEventListener("click", function() {
+    buttonClicked(1);
+});
 
-let computerMove = getMoveName(randomNumber);
-console.log('Ruch komputera po getMoveName:', computerMove);
+paperButton.addEventListener("click", function() {
+    buttonClicked(2);
+});
 
-printMessage('Ruch computera to: ' + computerMove);
-
-// Pobranie ruchu gracza
-
-let playerImput = prompt('Wybierz swój ruch! 1: kamień, 2: papier lub 3: nożyce');
-
-console.log('Gracz wybrał: ' + playerImput);
-
-let playerMove = getMoveName(Number(playerImput));
-console.log('Ruch gracza po getMoveName:', playerMove);
-
-printMessage('Twój ruch to: ' + playerMove);
-
-// Określenie wyniku gry
-
-displayResult(computerMove, playerMove);
+scissorsButton.addEventListener("click", function() {
+    buttonClicked(3);
+});
