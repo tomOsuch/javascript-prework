@@ -67,22 +67,20 @@ function playGame(playerInput) {
     clearMessages();
     // Generate computer move
 
-    let randomNumber = Math.floor(Math.random() * 3) + 1;
+    const randomNumber = Math.floor(Math.random() * 3) + 1;
 
     console.log("Wylosowana liczba całkowita z zakresu 1-3 to: " + randomNumber);
 
-    let computerMove = getMoveName(randomNumber);
+    const computerMove = getMoveName(randomNumber);
     console.log("Ruch komputera po getMoveName:", computerMove);
 
     printMessage("Ruch computera to: " + computerMove);
 
     // Get player move
 
-    let playerInput = playerInput;
-
     console.log("Gracz wybrał: " + playerInput);
 
-    let playerMove = getMoveName(Number(playerInput));
+    const playerMove = getMoveName(Number(playerInput));
     console.log("Ruch gracza po getMoveName:", playerMove);
 
     printMessage("Twój ruch to: " + playerMove);
