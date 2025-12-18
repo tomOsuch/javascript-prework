@@ -65,7 +65,7 @@ function displayResult(argComputerMove, argPlayerMove) {
 
 function playGame(playerInput) {
     clearMessages();
-    // Generowanie ruchu komputera
+    // Generate computer move
 
     let randomNumber = Math.floor(Math.random() * 3) + 1;
 
@@ -76,25 +76,23 @@ function playGame(playerInput) {
 
     printMessage("Ruch computera to: " + computerMove);
 
-    // Pobranie ruchu gracza
+    // Get player move
 
-    /*let playerImput = prompt(
-        "Wybierz swój ruch! 1: kamień, 2: papier lub 3: nożyce"
-    );*/
+    let playerInput = playerInput;
 
-    let playerImput = playerInput;
+    console.log("Gracz wybrał: " + playerInput);
 
-    console.log("Gracz wybrał: " + playerImput);
-
-    let playerMove = getMoveName(Number(playerImput));
+    let playerMove = getMoveName(Number(playerInput));
     console.log("Ruch gracza po getMoveName:", playerMove);
 
     printMessage("Twój ruch to: " + playerMove);
 
-    // Określenie wyniku gry
+    // Determine game result
 
     displayResult(computerMove, playerMove);
 }
 
-// Test funkcji getMoveName
+//  Test getMoveName function
+console.log("Test getMoveName(1):", getMoveName(1));
+console.log("Test getMoveName(3):", getMoveName(3));    
 console.log("Test getMoveName(2):", getMoveName(2));
